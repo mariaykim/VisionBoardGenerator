@@ -7,46 +7,21 @@
 
 import SwiftUI
 
+/// The main grid view for the app, showing all the goals the user created
 struct HomeView: View {
-    @ObservedObject var viewModel = HomeViewViewModel()
-    @State var text = String()
-    @State var image: UIImage?
+//    @State private var goals
+    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-            VStack {
-                Spacer()
-                if let image = image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                } else {
-                    Text("Type prompt to generate image")
-                }
-                Spacer()
-                TextField("Type prompt here...", text: $text)
-                    .padding()
-                Button("Generate!") {
-                    if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { // saving on credits
-                        Task {
-                            await generateImage(prompt: text)
-                        }
-                    }
-                }
+        ScrollView {
+            LazyVGrid(columns: gridItemLayout) {
+//                ForEach(goals) { goal in
+//                    NavigationLink(value: goal) {
+//                        GoalGridItem(goal: goal)
+//                    }
+//                }
             }
-            .onAppear {
-                viewModel.setup()
-            }
-            .padding()
-    }
-    
-    func generateImage(prompt: String) async {
-        let result = await viewModel.generateImage(prompt: text)
-        if result == nil {
-            print("Failed to retrieve image")
         }
-        self.image = result
     }
 }
 
