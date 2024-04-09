@@ -19,6 +19,10 @@ struct LoginView: View {
                     subtitle: "see it & believe you can achieve it",
                     backgroundColor: .green
                 )
+                if !viewModel.errorMessage.isEmpty {
+                    Text(viewModel.errorMessage)
+                        .foregroundStyle(.red)
+                }
                 // Login Form
                 loginFormView
                 // Create Account
@@ -37,7 +41,7 @@ struct LoginView: View {
             SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(DefaultTextFieldStyle())
             VBGButton(title: "Log in", backgroundColor: .blue) {
-                //
+                viewModel.login()
             }
             .padding(.vertical, 15)
         }

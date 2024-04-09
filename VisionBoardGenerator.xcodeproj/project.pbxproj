@@ -58,6 +58,7 @@
 		3AE293BF2BC5D94300CF21D0 /* VBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293BE2BC5D94300CF21D0 /* VBGButton.swift */; };
 		3AE293C42BC5DB3900CF21D0 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293C32BC5DB3900CF21D0 /* LoginViewViewModel.swift */; };
 		3AE293C62BC5DB4600CF21D0 /* RegistrationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293C52BC5DB4600CF21D0 /* RegistrationViewViewModel.swift */; };
+		3AE293C82BC5E4BF00CF21D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293C72BC5E4BF00CF21D0 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		3AE293BE2BC5D94300CF21D0 /* VBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBGButton.swift; sourceTree = "<group>"; };
 		3AE293C32BC5DB3900CF21D0 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		3AE293C52BC5DB4600CF21D0 /* RegistrationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewViewModel.swift; sourceTree = "<group>"; };
+		3AE293C72BC5E4BF00CF21D0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 		3AE293C22BC5DB2200CF21D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3AE293C72BC5E4BF00CF21D0 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				3AE293C42BC5DB3900CF21D0 /* LoginViewViewModel.swift in Sources */,
 				3AE293652BC480F600CF21D0 /* GoalCreationView.swift in Sources */,
 				3AE293692BC4874700CF21D0 /* GoalCreationViewViewModel.swift in Sources */,
+				3AE293C82BC5E4BF00CF21D0 /* User.swift in Sources */,
 				3AE293C62BC5DB4600CF21D0 /* RegistrationViewViewModel.swift in Sources */,
 				3AE2936B2BC4B38E00CF21D0 /* GoalItem.swift in Sources */,
 				3AE293582BC4713600CF21D0 /* GoalsViewViewModel.swift in Sources */,
