@@ -10,6 +10,7 @@ import SwiftUI
 final class GoalCreationViewViewModel: ObservableObject {
     @Published var title = ""
     @Published var goalDate = Date()
+    @Published var showAlert = false
     
     init() {}
     
@@ -17,7 +18,11 @@ final class GoalCreationViewViewModel: ObservableObject {
         //
     }
     
-    func canSave() {
-        //
+    func canSave() -> Bool {
+        guard !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return false }
+        
+        guard goalDate >= Date().addingTimeInterval(-86400) else { return false }
+        
+        return true
     }
 }

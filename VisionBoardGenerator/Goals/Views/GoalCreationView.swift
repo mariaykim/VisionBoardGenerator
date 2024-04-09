@@ -25,12 +25,22 @@ struct GoalCreationView: View {
                 VBGButton(
                     title: "Save"
                 ) {
-                    viewModel.save()
-                    goalCreationViewPresented = false
+                    if viewModel.canSave() {
+                        viewModel.save()
+                        goalCreationViewPresented = false
+                    } else {
+                        viewModel.showAlert = true
+                    }
                 }
                 .padding()
             }
         }
+        .alert(isPresented: $viewModel.showAlert, content: {
+            Alert(
+                title: Text("Error!"),
+                message: Text("Please fill in all fields and select a valid goal date")
+            )
+        })
     }
 }
 
