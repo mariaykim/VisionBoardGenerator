@@ -52,6 +52,8 @@
 		3AE293AA2BC5AAEC00CF21D0 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE293A92BC5AAEC00CF21D0 /* FirebaseRemoteConfigSwift */; };
 		3AE293AC2BC5AAEC00CF21D0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE293AB2BC5AAEC00CF21D0 /* FirebaseStorage */; };
 		3AE293AE2BC5AAEC00CF21D0 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE293AD2BC5AAEC00CF21D0 /* FirebaseStorageCombine-Community */; };
+		3AE293B72BC5B6D800CF21D0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293B62BC5B6D800CF21D0 /* LoginView.swift */; };
+		3AE293B92BC5B6E600CF21D0 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		3AE293682BC4874700CF21D0 /* GoalCreationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreationViewViewModel.swift; sourceTree = "<group>"; };
 		3AE2936A2BC4B38E00CF21D0 /* GoalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItem.swift; sourceTree = "<group>"; };
 		3AE2936C2BC5A9AD00CF21D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3AE293B62BC5B6D800CF21D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 		3AE293AF2BC5B44400CF21D0 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				3AE293B62BC5B6D800CF21D0 /* LoginView.swift */,
+				3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE293B92BC5B6E600CF21D0 /* RegistrationView.swift in Sources */,
 				3AE293652BC480F600CF21D0 /* GoalCreationView.swift in Sources */,
 				3AE293692BC4874700CF21D0 /* GoalCreationViewViewModel.swift in Sources */,
 				3AE2936B2BC4B38E00CF21D0 /* GoalItem.swift in Sources */,
@@ -339,6 +346,7 @@
 				3AE2935A2BC4726800CF21D0 /* ContentView.swift in Sources */,
 				3A328D602BC43C0300DDA90E /* GoalsView.swift in Sources */,
 				3A328D5E2BC43C0300DDA90E /* VisionBoardGeneratorApp.swift in Sources */,
+				3AE293B72BC5B6D800CF21D0 /* LoginView.swift in Sources */,
 				3AE293672BC4848200CF21D0 /* GoalItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
