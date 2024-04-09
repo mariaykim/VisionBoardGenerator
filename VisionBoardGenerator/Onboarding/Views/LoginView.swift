@@ -43,7 +43,7 @@ struct LoginView: View {
             VBGButton(title: "Log in", backgroundColor: .blue) {
                 viewModel.login()
             }
-            .padding(.vertical, 15)
+            .padding()
         }
     }
     

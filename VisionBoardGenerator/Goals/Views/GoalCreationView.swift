@@ -9,47 +9,31 @@ import SwiftUI
 
 struct GoalCreationView: View {
     @ObservedObject var viewModel = GoalCreationViewViewModel()
-    @State var text = String()
-    @State var image: UIImage?
+    @Binding var goalCreationViewPresented: Bool
     
     var body: some View {
-        VStack {
-            Spacer()
-            if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
-            } else {
-                Text("Type prompt to generate image")
-            }
-            Spacer()
-            TextField("Type prompt here...", text: $text)
-                .padding()
-            Button("Generate!") {
-                if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { // saving on credits
-                    Task {
-                        await generateImage(prompt: text)
-                    }
+        VStack{
+            Text("Create a new goal")
+                .font(.largeTitle)
+                .bold()
+                .padding(.top, 30)
+            Form {
+                TextField("Title", text: $viewModel.title)
+                    .textFieldStyle(DefaultTextFieldStyle())
+                DatePicker("Goal Date", selection: $viewModel.goalDate)
+                    .datePickerStyle(.graphical)
+                VBGButton(
+                    title: "Save"
+                ) {
+                    viewModel.save()
+                    goalCreationViewPresented = false
                 }
+                .padding()
             }
         }
-        .onAppear {
-            viewModel.setup()
-        }
-        .padding()
-    }
-    
-    func generateImage(prompt: String) async {
-        let result = await viewModel.generateImage(prompt: text)
-        if result == nil {
-            print("Failed to retrieve image")
-        }
-        self.image = result
     }
 }
 
 #Preview {
-    GoalCreationView()
+    GoalCreationView(goalCreationViewPresented: .constant(true))
 }

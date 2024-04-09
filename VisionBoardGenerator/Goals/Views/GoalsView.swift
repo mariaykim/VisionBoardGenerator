@@ -53,10 +53,13 @@ struct GoalsView: View {
             .navigationTitle("Goals")
             .toolbar {
                 Button {
-                    //
+                    viewModel.showingGoalCreationView = true
                 } label: {
                     Image(systemName: "plus")
                 }
+            }
+            .sheet(isPresented: $viewModel.showingGoalCreationView) {
+                GoalCreationView(goalCreationViewPresented: $viewModel.showingGoalCreationView)
             }
         }
     }

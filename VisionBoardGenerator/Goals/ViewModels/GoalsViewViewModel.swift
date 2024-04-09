@@ -9,5 +9,7 @@ import Foundation
 
 /// A class that loads, saves, updates goals
 final class GoalsViewViewModel: ObservableObject {
+    @Published var showingGoalCreationView = false
+    
     init() {}
 }
