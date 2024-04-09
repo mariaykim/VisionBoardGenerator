@@ -54,6 +54,8 @@
 		3AE293AE2BC5AAEC00CF21D0 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE293AD2BC5AAEC00CF21D0 /* FirebaseStorageCombine-Community */; };
 		3AE293B72BC5B6D800CF21D0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293B62BC5B6D800CF21D0 /* LoginView.swift */; };
 		3AE293B92BC5B6E600CF21D0 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */; };
+		3AE293BB2BC5C64600CF21D0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293BA2BC5C64600CF21D0 /* HeaderView.swift */; };
+		3AE293BF2BC5D94300CF21D0 /* VBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293BE2BC5D94300CF21D0 /* VBGButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		3AE2936C2BC5A9AD00CF21D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3AE293B62BC5B6D800CF21D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		3AE293BA2BC5C64600CF21D0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3AE293BE2BC5D94300CF21D0 /* VBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBGButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		3A328D5C2BC43C0300DDA90E /* VisionBoardGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				3AE293BD2BC5D90E00CF21D0 /* Shared */,
 				3AE293B22BC5B4CB00CF21D0 /* VisionBoardGeneratorApp */,
 				3AE293B02BC5B45500CF21D0 /* Goals */,
 				3AE293AF2BC5B44400CF21D0 /* Onboarding */,
@@ -168,6 +173,7 @@
 		3AE293AF2BC5B44400CF21D0 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				3AE293BA2BC5C64600CF21D0 /* HeaderView.swift */,
 				3AE293B62BC5B6D800CF21D0 /* LoginView.swift */,
 				3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */,
 			);
@@ -225,6 +231,14 @@
 				3AE2936A2BC4B38E00CF21D0 /* GoalItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3AE293BD2BC5D90E00CF21D0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3AE293BE2BC5D94300CF21D0 /* VBGButton.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,8 +356,10 @@
 				3AE293692BC4874700CF21D0 /* GoalCreationViewViewModel.swift in Sources */,
 				3AE2936B2BC4B38E00CF21D0 /* GoalItem.swift in Sources */,
 				3AE293582BC4713600CF21D0 /* GoalsViewViewModel.swift in Sources */,
+				3AE293BF2BC5D94300CF21D0 /* VBGButton.swift in Sources */,
 				3AE293532BC4621900CF21D0 /* APIKeys.swift in Sources */,
 				3AE2935A2BC4726800CF21D0 /* ContentView.swift in Sources */,
+				3AE293BB2BC5C64600CF21D0 /* HeaderView.swift in Sources */,
 				3A328D602BC43C0300DDA90E /* GoalsView.swift in Sources */,
 				3A328D5E2BC43C0300DDA90E /* VisionBoardGeneratorApp.swift in Sources */,
 				3AE293B72BC5B6D800CF21D0 /* LoginView.swift in Sources */,

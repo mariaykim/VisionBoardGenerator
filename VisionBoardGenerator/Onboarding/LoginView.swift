@@ -16,7 +16,11 @@ struct LoginView: View {
         NavigationStack {
             VStack {
                 // Header
-                headerView
+                HeaderView(
+                    title: "Vision Board Generator",
+                    subtitle: "see it & believe you can achieve it",
+                    backgroundColor: .green
+                )
                 // Login Form
                 loginFormView
                 // Create Account
@@ -26,35 +30,16 @@ struct LoginView: View {
         }
     }
     
-    var headerView: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                .fill(.green.gradient)
-            VStack {
-                Text("Vision Board Generator")
-                    .font(.largeTitle)
-                Text("see it, believe it")
-                    .font(.title2)
-            }
-        }
-    }
-    
     var loginFormView: some View {
         Form {
             TextField("Email Address", text: $email)
                 .textFieldStyle(DefaultTextFieldStyle())
+                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                .autocorrectionDisabled()
             SecureField("Password", text: $password)
                 .textFieldStyle(DefaultTextFieldStyle())
-            Button {
+            VBGButton(title: "Log in", backgroundColor: .blue) {
                 //
-            } label: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    Text("Log In")
-                        .foregroundStyle(.white)
-                        .bold()
-                }
             }
             .padding(.vertical, 15)
         }
