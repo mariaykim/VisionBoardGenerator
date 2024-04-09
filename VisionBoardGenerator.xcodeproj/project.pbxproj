@@ -56,6 +56,8 @@
 		3AE293B92BC5B6E600CF21D0 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */; };
 		3AE293BB2BC5C64600CF21D0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293BA2BC5C64600CF21D0 /* HeaderView.swift */; };
 		3AE293BF2BC5D94300CF21D0 /* VBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293BE2BC5D94300CF21D0 /* VBGButton.swift */; };
+		3AE293C42BC5DB3900CF21D0 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293C32BC5DB3900CF21D0 /* LoginViewViewModel.swift */; };
+		3AE293C62BC5DB4600CF21D0 /* RegistrationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293C52BC5DB4600CF21D0 /* RegistrationViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		3AE293BA2BC5C64600CF21D0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3AE293BE2BC5D94300CF21D0 /* VBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBGButton.swift; sourceTree = "<group>"; };
+		3AE293C32BC5DB3900CF21D0 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
+		3AE293C52BC5DB4600CF21D0 /* RegistrationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +177,9 @@
 		3AE293AF2BC5B44400CF21D0 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3AE293BA2BC5C64600CF21D0 /* HeaderView.swift */,
-				3AE293B62BC5B6D800CF21D0 /* LoginView.swift */,
-				3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */,
+				3AE293C22BC5DB2200CF21D0 /* Models */,
+				3AE293C12BC5DB1C00CF21D0 /* ViewModels */,
+				3AE293C02BC5DB1600CF21D0 /* Views */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -239,6 +243,32 @@
 				3AE293BE2BC5D94300CF21D0 /* VBGButton.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		3AE293C02BC5DB1600CF21D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3AE293BA2BC5C64600CF21D0 /* HeaderView.swift */,
+				3AE293B62BC5B6D800CF21D0 /* LoginView.swift */,
+				3AE293B82BC5B6E600CF21D0 /* RegistrationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3AE293C12BC5DB1C00CF21D0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3AE293C32BC5DB3900CF21D0 /* LoginViewViewModel.swift */,
+				3AE293C52BC5DB4600CF21D0 /* RegistrationViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3AE293C22BC5DB2200CF21D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,8 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AE293B92BC5B6E600CF21D0 /* RegistrationView.swift in Sources */,
+				3AE293C42BC5DB3900CF21D0 /* LoginViewViewModel.swift in Sources */,
 				3AE293652BC480F600CF21D0 /* GoalCreationView.swift in Sources */,
 				3AE293692BC4874700CF21D0 /* GoalCreationViewViewModel.swift in Sources */,
+				3AE293C62BC5DB4600CF21D0 /* RegistrationViewViewModel.swift in Sources */,
 				3AE2936B2BC4B38E00CF21D0 /* GoalItem.swift in Sources */,
 				3AE293582BC4713600CF21D0 /* GoalsViewViewModel.swift in Sources */,
 				3AE293BF2BC5D94300CF21D0 /* VBGButton.swift in Sources */,
