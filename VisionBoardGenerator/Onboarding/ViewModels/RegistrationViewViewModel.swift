@@ -38,9 +38,9 @@ final class RegistrationViewViewModel: ObservableObject {
         
         let db = Firestore.firestore()
         
-//        db.collection("users")
-//            .document(id)
-//            .setData(<#T##documentData: [String : Any]##[String : Any]#>)
+        db.collection("users")
+            .document(id)
+            .setData(newUser.asDictionary())
     }
     
     private func validate() -> Bool {

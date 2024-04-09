@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ContentViewViewModel()
+    
     var body: some View {
-        TabView {
+        if viewModel.isSignedIn && !viewModel.currentUserId.isEmpty {
+            TabView {
+                GoalsView()
+            }
+        } else {
             NavigationStack {
-                LoginView(viewModel: .init())
+                LoginView()
             }
         }
     }

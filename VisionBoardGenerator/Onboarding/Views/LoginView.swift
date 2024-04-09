@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject var viewModel: LoginViewViewModel
+    @StateObject var viewModel = LoginViewViewModel()
     
     var body: some View {
         NavigationStack {
@@ -57,5 +57,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(viewModel: .init())
+    LoginView()
 }
