@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  GoalsView.swift
 //  VisionBoardGenerator
 //
 //  Created by Maria Kim on 4/8/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// The main grid view for the app, showing all the goals the user created
-struct HomeView: View {
+struct GoalsView: View {
 //    @State private var goals
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -26,5 +26,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    GoalsView()
 }
