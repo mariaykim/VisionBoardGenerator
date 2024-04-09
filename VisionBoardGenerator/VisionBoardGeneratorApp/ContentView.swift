@@ -13,13 +13,25 @@ struct ContentView: View {
     var body: some View {
         if viewModel.isSignedIn && !viewModel.currentUserId.isEmpty {
             TabView {
-                GoalsView()
+                mainView
             }
         } else {
             NavigationStack {
                 LoginView()
             }
         }
+    }
+    
+    @ViewBuilder
+    var mainView: some View {
+        GoalsView(userId: viewModel.currentUserId)
+            .tabItem {
+                Label("Goals", systemImage: "star")
+            }
+        SettingsView()
+            .tabItem {
+                Label("Settings", systemImage: "gear")
+            }
     }
 }
 
