@@ -12,9 +12,6 @@ struct GoalItemView: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .fill(.blue)
-                .frame(width: 150, height: 150)
             Image(systemName: "cat")
                 .resizable()
                 .frame(width: 150, height: 150)

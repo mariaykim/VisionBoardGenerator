@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GoalItem: Codable, Identifiable {
+struct GoalItem: Codable, Identifiable, Hashable {
     let id: String
     let title: String
     let goalDate: TimeInterval

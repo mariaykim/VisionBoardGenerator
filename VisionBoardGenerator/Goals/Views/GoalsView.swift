@@ -24,12 +24,17 @@ struct GoalsView: View {
             ScrollView {
                 LazyVGrid(columns: gridItemLayout) {
                     ForEach(items) { item in
-                        GoalItemView(item: item)
+                        NavigationLink(value: item) {
+                            GoalItemView(item: item)
+                        }
                     }
                 }
             }
             .padding(30)
             .navigationTitle("Goals")
+            .navigationDestination(for: GoalItem.self) { item in
+                GoalItemDetailsView(item: item)
+            }
             .toolbar {
                 Button {
                     viewModel.showingGoalCreationView = true
