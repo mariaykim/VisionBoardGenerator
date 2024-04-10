@@ -22,6 +22,7 @@ struct VBGButton: View {
                 Text(title)
                     .foregroundStyle(.white)
                     .bold()
+                    .padding(5)
             }
         }
     }

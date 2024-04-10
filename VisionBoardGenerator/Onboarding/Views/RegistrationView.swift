@@ -39,7 +39,6 @@ struct RegistrationView: View {
             VBGButton(title: "Create Account", backgroundColor: .blue) {
                 viewModel.register()
             }
-            .padding()
         }
     }
 }
