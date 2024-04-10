@@ -11,6 +11,7 @@ import SwiftUI
 
 final class GoalCreationViewViewModel: ObservableObject {
     @Published var title = ""
+    @Published var description = ""
     @Published var goalDate = Date()
     @Published var showAlert = false
     
@@ -28,6 +29,7 @@ final class GoalCreationViewViewModel: ObservableObject {
         let newGoal = GoalItem(
             id: newId,
             title: title,
+            description: description,
             goalDate: goalDate.timeIntervalSince1970,
             createdDate: Date().timeIntervalSince1970
         )

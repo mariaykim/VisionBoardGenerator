@@ -20,6 +20,8 @@ struct GoalCreationView: View {
             Form {
                 TextField("Title", text: $viewModel.title)
                     .textFieldStyle(DefaultTextFieldStyle())
+                TextField("Description", text: $viewModel.description)
+                    .textFieldStyle(DefaultTextFieldStyle())
                 DatePicker("Goal Date", selection: $viewModel.goalDate)
                     .datePickerStyle(.graphical)
                 VBGButton(

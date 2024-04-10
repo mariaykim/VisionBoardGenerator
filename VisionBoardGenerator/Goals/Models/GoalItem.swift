@@ -10,6 +10,7 @@ import Foundation
 struct GoalItem: Codable, Identifiable, Hashable {
     let id: String
     let title: String
+    let description: String
     let goalDate: TimeInterval
     let createdDate: TimeInterval
 }

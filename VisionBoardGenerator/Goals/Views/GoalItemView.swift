@@ -27,6 +27,7 @@ struct GoalItemView: View {
         item: .init(
             id: "id",
             title: "title",
+            description: "desc",
             goalDate: 35,
             createdDate: 23
         )

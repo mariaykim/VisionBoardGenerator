@@ -13,6 +13,17 @@ class GoalItemDetailsViewViewModel: ObservableObject {
     
     init() { }
     
+    func update(item: GoalItem) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let db = Firestore.firestore()
+        db.collection("users")
+            .document(uid) // TODO: refactor
+            .collection("goals")
+            .document(item.id)
+            .updateData(item.asDictionary())
+    }
+    
     func delete(id: String) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
     
