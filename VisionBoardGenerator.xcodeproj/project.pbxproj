@@ -65,6 +65,7 @@
 		3AE293D02BC5F3FC00CF21D0 /* SettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293CF2BC5F3FC00CF21D0 /* SettingsViewViewModel.swift */; };
 		3AE293D22BC5F8E900CF21D0 /* OpenAiImageGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293D12BC5F8E900CF21D0 /* OpenAiImageGeneratorView.swift */; };
 		3AE293D42BC5F94A00CF21D0 /* OpenAiImageGeneratorViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293D32BC5F94A00CF21D0 /* OpenAiImageGeneratorViewViewModel.swift */; };
+		3AE293D62BC60DCD00CF21D0 /* GoalItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE293D52BC60DCD00CF21D0 /* GoalItemViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		3AE293CF2BC5F3FC00CF21D0 /* SettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewModel.swift; sourceTree = "<group>"; };
 		3AE293D12BC5F8E900CF21D0 /* OpenAiImageGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAiImageGeneratorView.swift; sourceTree = "<group>"; };
 		3AE293D32BC5F94A00CF21D0 /* OpenAiImageGeneratorViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAiImageGeneratorViewViewModel.swift; sourceTree = "<group>"; };
+		3AE293D52BC60DCD00CF21D0 /* GoalItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE293682BC4874700CF21D0 /* GoalCreationViewViewModel.swift */,
+				3AE293D52BC60DCD00CF21D0 /* GoalItemViewViewModel.swift */,
 				3AE293D32BC5F94A00CF21D0 /* OpenAiImageGeneratorViewViewModel.swift */,
 				3AE293572BC4713600CF21D0 /* GoalsViewViewModel.swift */,
 			);
@@ -405,6 +408,7 @@
 				3AE293B92BC5B6E600CF21D0 /* RegistrationView.swift in Sources */,
 				3AE293C42BC5DB3900CF21D0 /* LoginViewViewModel.swift in Sources */,
 				3AE293652BC480F600CF21D0 /* GoalCreationView.swift in Sources */,
+				3AE293D62BC60DCD00CF21D0 /* GoalItemViewViewModel.swift in Sources */,
 				3AE293D42BC5F94A00CF21D0 /* OpenAiImageGeneratorViewViewModel.swift in Sources */,
 				3AE293692BC4874700CF21D0 /* GoalCreationViewViewModel.swift in Sources */,
 				3AE293C82BC5E4BF00CF21D0 /* User.swift in Sources */,

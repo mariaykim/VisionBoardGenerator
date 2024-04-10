@@ -5,48 +5,27 @@
 //  Created by Maria Kim on 4/8/24.
 //
 
+import FirebaseFirestoreSwift
 import SwiftUI
 
 /// The main grid view for the app, showing all the goals the user created
 struct GoalsView: View {
     @StateObject var viewModel = GoalsViewViewModel()
-     
-    private let userId: String
+    @FirestoreQuery var items: [GoalItem]
     
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     init(userId: String) {
-        self.userId = userId
+        self._items = FirestoreQuery(collectionPath: "users/\(userId)/goals")
     }
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: gridItemLayout) {
-                    Rectangle()
-                        .fill(.green)
-                        .frame(width: 200, height: 200)
-                    Rectangle()
-                        .fill(.cyan)
-                        .frame(width: 200, height: 200)
-                    Rectangle()
-                        .fill(.yellow)
-                        .frame(width: 200, height: 200)
-                    Rectangle()
-                        .fill(.red)
-                        .frame(width: 200, height: 200)
-                    Rectangle()
-                        .fill(.green)
-                        .frame(width: 200, height: 200)
-                    Rectangle()
-                        .fill(.cyan)
-                        .frame(width: 200, height: 200)
-                    Rectangle()
-                        .fill(.yellow)
-                        .frame(width: 200, height: 200)
-                    Rectangle()
-                        .fill(.red)
-                        .frame(width: 200, height: 200)
+                    ForEach(items) { item in
+                        GoalItemView(item: item)
+                    }
                 }
             }
             .padding(30)
@@ -66,5 +45,5 @@ struct GoalsView: View {
 }
 
 #Preview {
-    GoalsView(userId: "")
+    GoalsView(userId: "sJTeemjWjohvegGIg2n5Lx3Ncut1")
 }

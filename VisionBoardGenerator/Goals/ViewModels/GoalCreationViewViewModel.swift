@@ -20,6 +20,7 @@ final class GoalCreationViewViewModel: ObservableObject {
         guard canSave() else { return }
 
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        insertGoalRecord(id: uid)
     }
     
     private func insertGoalRecord(id: String) {
