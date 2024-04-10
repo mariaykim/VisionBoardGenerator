@@ -14,10 +14,10 @@ struct GoalItemView: View {
         ZStack {
             Rectangle()
                 .fill(.blue)
-                .frame(width: 200, height: 200)
+                .frame(width: 150, height: 150)
             Image(systemName: "cat")
                 .resizable()
-                .frame(width: 200, height: 200)
+                .frame(width: 150, height: 150)
             Text(item.title)
                 .font(.title2)
                 .bold()
@@ -31,8 +31,7 @@ struct GoalItemView: View {
             id: "id",
             title: "title",
             goalDate: 35,
-            createdDate: 23,
-            isDone: false
+            createdDate: 23
         )
     )
 }

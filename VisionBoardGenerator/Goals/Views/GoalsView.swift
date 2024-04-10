@@ -13,7 +13,7 @@ struct GoalsView: View {
     @StateObject var viewModel = GoalsViewViewModel()
     @FirestoreQuery var items: [GoalItem]
     
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
+    private var gridItemLayout = [GridItem(.flexible(), spacing: 10), GridItem(.flexible())]
     
     init(userId: String) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/goals")

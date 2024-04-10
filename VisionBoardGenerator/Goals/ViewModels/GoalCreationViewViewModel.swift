@@ -29,8 +29,7 @@ final class GoalCreationViewViewModel: ObservableObject {
             id: newId,
             title: title,
             goalDate: goalDate.timeIntervalSince1970,
-            createdDate: Date().timeIntervalSince1970,
-            isDone: false
+            createdDate: Date().timeIntervalSince1970
         )
         
         let db = Firestore.firestore()
@@ -38,7 +37,7 @@ final class GoalCreationViewViewModel: ObservableObject {
         db.collection("users")
             .document(id)
             .collection("goals")
-            .document(id)
+            .document(newId)
             .setData(newGoal.asDictionary())
     }
     
