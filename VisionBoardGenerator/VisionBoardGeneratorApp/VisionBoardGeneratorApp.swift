@@ -9,12 +9,16 @@ import SwiftUI
 import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
-    return true
-  }
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        // Firebase
+        FirebaseApp.configure()
+        
+        // Adjust Navigation Bar title margin
+        UINavigationBar.appearance().layoutMargins.left = 0
+        
+        return true
+    }
 }
 
 @main

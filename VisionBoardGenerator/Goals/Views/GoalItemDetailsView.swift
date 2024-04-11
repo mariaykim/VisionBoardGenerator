@@ -16,8 +16,9 @@ struct GoalItemDetailsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(item.title)
-                .font(.largeTitle)
+                .font(.title)
                 .bold()
+                .lineLimit(4)
                 .padding(.bottom, 20)
             
             HStack(spacing: 0) {
@@ -30,20 +31,33 @@ struct GoalItemDetailsView: View {
             Text("Goal Description")
                 .bold()
             TextEditor(text: $goalDescriptionText)
-                .padding(.bottom, 20)
+                .backgroundStyle(.vbgIsabelline)
+                .cornerRadius(10)
+                .frame(maxHeight: UIScreen.main.bounds.height * 0.4)
 
             Spacer()
+            
             VBGButton(title: "Save changes") {
                 viewModel.update(item: item)
             }
-            .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-            .padding(.bottom, 20)
-            VBGButton(title: "Delete goal") {
+            .padding(.vertical, 20)
+            VBGButton(title: "Delete goal", backgroundColor: .vbgCordovan) {
                 viewModel.delete(id: item.id)
             }
-            .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+            .padding(.bottom, 30)
         }
-        .padding(.horizontal, 30)
+        .background(.vbgWenge)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    //
+                } label: {
+                    Image(systemName: "square.and.pencil")
+                }
+            }
+        }
+        .toolbarBackground(.vbgWenge)
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             goalDescriptionText = item.description
         }
@@ -51,5 +65,5 @@ struct GoalItemDetailsView: View {
 }
 
 #Preview {
-    GoalItemDetailsView(item: .init(id: "", title: "Buy a new car", description: "I want a tesla", goalDate: 25, createdDate: 27))
+    GoalItemDetailsView(item: .init(id: "", title: "Testing a really long goal title because the more words the better am I right? Adding one more sentence just in case.", description: "I want a tesla", goalDate: 25, createdDate: 27))
 }

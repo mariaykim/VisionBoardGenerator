@@ -17,7 +17,7 @@ struct VBGButton: View {
             action()
         } label: {
                 Text(title)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.vbgIsabelline)
                     .bold()
                     .padding(5)
                     .frame(maxWidth: .infinity)
@@ -28,7 +28,7 @@ struct VBGButton: View {
 }
 
 #Preview {
-    VBGButton(title: "Button Title", backgroundColor: .purple) {
+    VBGButton(title: "Button Title", backgroundColor: .vbgEerieBlack) {
         //
     }
 }

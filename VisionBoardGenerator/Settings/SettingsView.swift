@@ -54,6 +54,7 @@ struct SettingsView: View {
             }
             .toolbar(.visible) // TODO: refactor
             .toolbarBackground(.vbgWenge)
+            .navigationBarTitleDisplayMode(.inline)
             .background(.vbgWenge)
         }
         .onAppear {

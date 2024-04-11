@@ -37,6 +37,7 @@ struct GoalCreationView: View {
                 .padding()
             }
         }
+        .background(.vbgIsabelline)
         .alert(isPresented: $viewModel.showAlert, content: {
             Alert(
                 title: Text("Error!"),
