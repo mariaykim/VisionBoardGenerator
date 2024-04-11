@@ -6,21 +6,44 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct HeaderView: View {
-    let title: String
-    let subtitle: String
+    let title: String?
+    let subtitle: String?
+    let image: UIImage?
     let backgroundColor: Color
+    
+    init(
+        title: String? = nil,
+        subtitle: String? = nil,
+        image: UIImage? = nil,
+        backgroundColor: Color = .blue
+    ) {
+        self.title = title
+        self.subtitle = subtitle
+        self.image = image
+        self.backgroundColor = backgroundColor
+    }
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                .fill(backgroundColor.gradient)
+            if let image = image {
+                Image(uiImage: image)
+                    .cornerRadius(10)
+            } else {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(backgroundColor.gradient)
+            }
             VStack {
-                Text(title)
-                    .font(.largeTitle)
-                Text(subtitle)
-                    .font(.title2)
+                if let title = title {
+                    Text(title)
+                        .font(.largeTitle)
+                }
+                if let subtitle = subtitle {
+                    Text(subtitle)
+                        .font(.title2)
+                }
             }
         }
     }

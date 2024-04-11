@@ -15,10 +15,12 @@ struct ContentView: View {
             TabView {
                 mainView
             }
+            .padding(.horizontal, 30)
         } else {
             NavigationStack {
                 LoginView()
             }
+            .padding(.horizontal, 30)
         }
     }
     

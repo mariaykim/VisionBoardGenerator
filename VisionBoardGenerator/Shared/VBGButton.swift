@@ -16,15 +16,14 @@ struct VBGButton: View {
         Button {
             action()
         } label: {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(backgroundColor)
                 Text(title)
                     .foregroundStyle(.white)
                     .bold()
                     .padding(5)
-            }
+                    .frame(maxWidth: .infinity)
         }
+        .buttonStyle(.borderedProminent)
+        .tint(backgroundColor)
     }
 }
 

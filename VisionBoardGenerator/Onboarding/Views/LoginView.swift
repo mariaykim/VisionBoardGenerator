@@ -12,34 +12,39 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 // Header
                 HeaderView(
-                    title: "Vision Board Generator",
-                    subtitle: "see it & believe you can achieve it",
-                    backgroundColor: .green
+                    image: UIImage(named: "LoginImage")
                 )
                 if !viewModel.errorMessage.isEmpty {
                     Text(viewModel.errorMessage)
                         .foregroundStyle(.red)
                 }
+                
                 // Login Form
                 loginFormView
+                    .padding(.top, 20)
+                
+                Spacer()
+                
                 // Create Account
                 createAccountView
+                    .padding(.bottom, 30)
             }
-            .padding(30)
         }
+        .toolbar(.visible)
     }
     
     var loginFormView: some View {
-        Form {
+        VStack(spacing: 0) {
             TextField("Email Address", text: $viewModel.email)
-                .textFieldStyle(DefaultTextFieldStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 .autocorrectionDisabled()
             SecureField("Password", text: $viewModel.password)
-                .textFieldStyle(DefaultTextFieldStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.vertical, 10)
             VBGButton(title: "Log in", backgroundColor: .blue) {
                 viewModel.login()
             }
@@ -51,7 +56,6 @@ struct LoginView: View {
             Text("New around here?")
             NavigationLink("Create an account", destination: RegistrationView())
         }
-        .padding(.bottom, 30)
     }
 }
 
