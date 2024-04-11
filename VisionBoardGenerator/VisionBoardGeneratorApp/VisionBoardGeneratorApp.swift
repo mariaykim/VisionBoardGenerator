@@ -25,6 +25,7 @@ struct VisionBoardGeneratorApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .background(.vbgWenge)
         }
     }
 }

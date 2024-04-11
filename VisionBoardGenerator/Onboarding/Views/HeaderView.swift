@@ -18,7 +18,7 @@ struct HeaderView: View {
         title: String? = nil,
         subtitle: String? = nil,
         image: UIImage? = nil,
-        backgroundColor: Color = .blue
+        backgroundColor: Color = .vbgEcru
     ) {
         self.title = title
         self.subtitle = subtitle

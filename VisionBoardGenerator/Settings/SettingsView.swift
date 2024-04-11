@@ -53,6 +53,8 @@ struct SettingsView: View {
                 }
             }
             .toolbar(.visible) // TODO: refactor
+            .toolbarBackground(.vbgWenge)
+            .background(.vbgWenge)
         }
         .onAppear {
             viewModel.fetchUser()

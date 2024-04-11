@@ -25,6 +25,7 @@ struct RegistrationView: View {
                 
                 Spacer()
             }
+            .background(.vbgWenge)
         }
     }
     
@@ -41,7 +42,7 @@ struct RegistrationView: View {
                 .padding(.vertical, 10)
             SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            VBGButton(title: "Create Account", backgroundColor: .blue) {
+            VBGButton(title: "Create Account", backgroundColor: .vbgEcru) {
                 viewModel.register()
             }
             .padding(.top, 10)

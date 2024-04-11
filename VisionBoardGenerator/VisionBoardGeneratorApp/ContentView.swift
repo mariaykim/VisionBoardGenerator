@@ -14,11 +14,14 @@ struct ContentView: View {
         if viewModel.isSignedIn && !viewModel.currentUserId.isEmpty {
             TabView {
                 mainView
+                    .background(.vbgWenge)
             }
             .padding(.horizontal, 30)
         } else {
             NavigationStack {
                 LoginView()
+                    .background(.vbgWenge)
+                    .toolbarBackground(.vbgWenge)
             }
             .padding(.horizontal, 30)
         }

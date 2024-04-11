@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VBGButton: View {
     let title: String
-    var backgroundColor: Color = .blue
+    var backgroundColor: Color = .vbgEcru
     let action: () -> Void
     
     var body: some View {

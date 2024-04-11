@@ -30,6 +30,7 @@ struct GoalsView: View {
                     }
                 }
             }
+            .background(.vbgWenge)
             .toolbar {
                 ToolbarItem {
                     Button {
@@ -39,6 +40,7 @@ struct GoalsView: View {
                     }
                 }
             }
+            .toolbarBackground(.vbgWenge)
             .navigationTitle("Goals")
             .navigationDestination(for: GoalItem.self) { item in
                 GoalItemDetailsView(item: item)

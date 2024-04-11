@@ -45,7 +45,7 @@ struct LoginView: View {
             SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.vertical, 10)
-            VBGButton(title: "Log in", backgroundColor: .blue) {
+            VBGButton(title: "Log in", backgroundColor: .vbgEcru) {
                 viewModel.login()
             }
         }
@@ -54,7 +54,7 @@ struct LoginView: View {
     var createAccountView: some View {
         VStack {
             Text("New around here?")
-            NavigationLink("Create an account", destination: RegistrationView())
+            NavigationLink("Create an account", destination: RegistrationView()) // TODO: refactor
         }
     }
 }
