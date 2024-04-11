@@ -37,24 +37,22 @@ struct SettingsView: View {
                             .bold()
                         Text("\(Date(timeIntervalSince1970: user.joinedDate).formatted(date: .abbreviated, time: .shortened))")
                     }
-                    .padding(.bottom, 20)
+                    
+                    Spacer()
                     
                     VBGButton(
                         title: "Log Out",
-                        backgroundColor: .red
+                        backgroundColor: .vbgCordovan
                     ) {
                         viewModel.logOut()
                     }
-                    .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    .padding(.bottom, 30)
 
                 } else {
                     Text("Loading settings...")
                 }
             }
-            .toolbar(.hidden)
-            .padding(.horizontal, 30)
-            
-            Spacer()
+            .toolbar(.visible) // TODO: refactor
         }
         .onAppear {
             viewModel.fetchUser()

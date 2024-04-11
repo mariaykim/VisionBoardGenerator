@@ -21,18 +21,6 @@ struct GoalsView: View {
     
     var body: some View {
         NavigationStack {
-            HStack(spacing: 0) {
-                Text("Goals")
-                    .font(.largeTitle)
-                    .bold()
-                Spacer()
-                Button {
-                    viewModel.showingGoalCreationView = true
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }
-            .padding(.horizontal, 30)
             ScrollView {
                 LazyVGrid(columns: gridItemLayout) {
                     ForEach(items) { item in
@@ -42,8 +30,16 @@ struct GoalsView: View {
                     }
                 }
             }
-            .padding(.horizontal, 30)
-            .toolbar(.hidden)
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        viewModel.showingGoalCreationView = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .navigationTitle("Goals")
             .navigationDestination(for: GoalItem.self) { item in
                 GoalItemDetailsView(item: item)
             }
