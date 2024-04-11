@@ -30,19 +30,24 @@ struct HeaderView: View {
         ZStack {
             if let image = image {
                 Image(uiImage: image)
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.40)
                     .cornerRadius(10)
+                
             } else {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(backgroundColor.gradient)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.40)
             }
-            VStack {
+            VStack(alignment: .center, spacing: 2) {
                 if let title = title {
                     Text(title)
                         .font(.largeTitle)
+                        .bold()
                 }
                 if let subtitle = subtitle {
-                    Text(subtitle)
-                        .font(.title2)
+                    Text(subtitle.uppercased())
+                        .font(.subheadline)
                 }
             }
         }

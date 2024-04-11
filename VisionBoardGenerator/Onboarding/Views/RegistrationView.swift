@@ -13,32 +13,38 @@ struct RegistrationView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 HeaderView(
                     title: "Registration",
-                    subtitle: "first step to achieving your goals",
-                    backgroundColor: .pink
+                    subtitle: "First Step To Achieving Your Goals",
+                    backgroundColor: Color(.vbgEcru)
                 )
+                .padding(.bottom, 30)
+                
                 registrationFormView
+                
+                Spacer()
             }
         }
     }
     
     var registrationFormView: some View {
-        Form {
+        VStack(spacing: 0) {
             TextField("Full Name", text: $viewModel.name)
-                .textFieldStyle(DefaultTextFieldStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 .autocorrectionDisabled()
             TextField("Email Address", text: $viewModel.email)
-                .textFieldStyle(DefaultTextFieldStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 .autocorrectionDisabled()
+                .padding(.vertical, 10)
             SecureField("Password", text: $viewModel.password)
-                .textFieldStyle(DefaultTextFieldStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
             VBGButton(title: "Create Account", backgroundColor: .blue) {
                 viewModel.register()
             }
+            .padding(.top, 10)
         }
     }
 }
