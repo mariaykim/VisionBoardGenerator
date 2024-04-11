@@ -12,18 +12,25 @@ struct GoalCreationView: View {
     @Binding var goalCreationViewPresented: Bool
     
     var body: some View {
-        VStack{
+        ScrollView {
             Text("Create a new goal")
                 .font(.largeTitle)
                 .bold()
                 .padding(.top, 30)
-            Form {
+            VStack(alignment: .leading) {
                 TextField("Title", text: $viewModel.title)
-                    .textFieldStyle(DefaultTextFieldStyle())
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("Description", text: $viewModel.description)
-                    .textFieldStyle(DefaultTextFieldStyle())
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 DatePicker("Goal Date", selection: $viewModel.goalDate)
                     .datePickerStyle(.graphical)
+                Spacer()
+                Text("Select a goal image")
+                    .font(.title3)
+                    .bold()
+                VBGImagePicker()
+                    .frame(width: UIScreen.main.bounds.width - 60, height: UIScreen.main.bounds.width - 60)
+                    .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 VBGButton(
                     title: "Save"
                 ) {
@@ -34,16 +41,17 @@ struct GoalCreationView: View {
                         viewModel.showAlert = true
                     }
                 }
-                .padding()
+                .padding(.vertical, 30)
             }
+            .background(.vbgIsabelline)
+            .alert(isPresented: $viewModel.showAlert, content: {
+                Alert(
+                    title: Text("Error!"),
+                    message: Text("Please fill in all fields and select a valid goal date")
+                )
+            })
+            .padding(.horizontal, 30)
         }
-        .background(.vbgIsabelline)
-        .alert(isPresented: $viewModel.showAlert, content: {
-            Alert(
-                title: Text("Error!"),
-                message: Text("Please fill in all fields and select a valid goal date")
-            )
-        })
     }
 }
 

@@ -47,6 +47,7 @@ struct GoalsView: View {
             }
             .sheet(isPresented: $viewModel.showingGoalCreationView) {
                 GoalCreationView(goalCreationViewPresented: $viewModel.showingGoalCreationView)
+                    .background(.vbgIsabelline)
             }
         }
     }
