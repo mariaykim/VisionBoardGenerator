@@ -30,6 +30,7 @@ struct VisionBoardGeneratorApp: App {
         WindowGroup {
             ContentView()
                 .background(.vbgWenge)
+                .ignoresSafeArea()
         }
     }
 }
