@@ -16,6 +16,7 @@ struct ContentView: View {
                 mainView
                     .background(.vbgWenge)
             }
+            .background(.vbgWenge)
             .padding(.horizontal, 30)
         } else {
             NavigationStack {
@@ -23,12 +24,14 @@ struct ContentView: View {
                     .background(.vbgWenge)
                     .toolbarBackground(.vbgWenge)
             }
+            .background(.vbgWenge)
             .padding(.horizontal, 30)
         }
     }
     
     @ViewBuilder
     var mainView: some View {
+        Group {
         GoalsView(userId: viewModel.currentUserId)
             .tabItem {
                 Label("Goals", systemImage: "star")
@@ -37,6 +40,10 @@ struct ContentView: View {
             .tabItem {
                 Label("Settings", systemImage: "gear")
             }
+        }
+        .toolbar(.hidden)
+        .toolbarBackground(.vbgWenge, for: .tabBar)
+        .toolbarBackground(.vbgWenge, for: .navigationBar)
     }
 }
 

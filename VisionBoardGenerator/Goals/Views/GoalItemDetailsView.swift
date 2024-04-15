@@ -14,37 +14,41 @@ struct GoalItemDetailsView: View {
     let item: GoalItem
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(item.title)
-                .font(.title)
-                .bold()
-                .lineLimit(4)
-                .padding(.bottom, 20)
-            
-            HStack(spacing: 0) {
-                Text("Goal Date: ")
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(item.title)
+                    .font(.title)
                     .bold()
-                Text("\(Date(timeIntervalSince1970: item.goalDate).formatted(date: .abbreviated, time: .shortened))")
+                    .lineLimit(4)
+                    .padding(.bottom, 20)
+                
+                HStack(spacing: 0) {
+                    Text("Goal Date: ")
+                        .bold()
+                    Text("\(Date(timeIntervalSince1970: item.goalDate).formatted(date: .abbreviated, time: .shortened))")
+                }
+                .padding(.bottom, 20)
+                
+                Text("Goal Description")
+                    .bold()
+                TextEditor(text: $goalDescriptionText)
+                    .backgroundStyle(.vbgIsabelline)
+                    .cornerRadius(10)
+                    .frame(minHeight: UIScreen.main.bounds.height * 0.25, maxHeight: UIScreen.main.bounds.height * 0.4)
+                
+                VBGButton(title: "Mark as completed") {
+                    viewModel.markAsCompleted(item: .init(id: item.id, title: item.title, description: goalDescriptionText, goalDate: item.goalDate, createdDate: item.createdDate, isCompleted: true, goalCompletedDate: Date().timeIntervalSince1970 + 5))
+                }
+                .padding(.top, 20)
+                VBGButton(title: "Save changes") {
+                    viewModel.update(item: .init(id: item.id, title: item.title, description: goalDescriptionText, goalDate: item.goalDate, createdDate: item.createdDate))
+                }
+                .padding(.vertical, 20)
+                VBGButton(title: "Delete goal", backgroundColor: .vbgCordovan) {
+                    viewModel.delete(id: item.id)
+                }
+                .padding(.bottom, 30)
             }
-            .padding(.bottom, 20)
-            
-            Text("Goal Description")
-                .bold()
-            TextEditor(text: $goalDescriptionText)
-                .backgroundStyle(.vbgIsabelline)
-                .cornerRadius(10)
-                .frame(maxHeight: UIScreen.main.bounds.height * 0.4)
-
-            Spacer()
-            
-            VBGButton(title: "Save changes") {
-                viewModel.update(item: item)
-            }
-            .padding(.vertical, 20)
-            VBGButton(title: "Delete goal", backgroundColor: .vbgCordovan) {
-                viewModel.delete(id: item.id)
-            }
-            .padding(.bottom, 30)
         }
         .background(.vbgWenge)
         .toolbar {
