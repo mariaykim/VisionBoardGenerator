@@ -41,7 +41,8 @@ struct ContentView: View {
                 Label("Settings", systemImage: "gear")
             }
         }
-        .toolbar(.hidden)
+        .toolbar(.visible, for: .tabBar)
+        .toolbar(.visible, for: .navigationBar)
         .toolbarBackground(.vbgWenge, for: .tabBar)
         .toolbarBackground(.vbgWenge, for: .navigationBar)
     }
